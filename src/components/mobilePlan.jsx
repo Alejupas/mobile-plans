@@ -1,33 +1,55 @@
 import React, { Component } from 'react';
-import '../style/mobilePlan.css'
+import ListImage from '../static/checked.png';
 
-class MobilePlans extends Component {
+class MobilePlan extends Component {
+  // pasirasyti pagalbini metodas
+
+  formatPrice(num) {
+    console.log(`skaicius ${num}`);
+    return num?.toFixed(2);
+  }
+  // this.formatPrice(5); // console.log() 'skaicius 5'
+  // jis priima kaina kaip skaiciu
+  // grazina su dviem skaiciais po kablelio
   render() {
-    return <div className="plan-card">
-
-      <div className="card-top">
-        <p className="plan-card__name"></p>
-      <span className="plan-card__data"><i></i></span>
-      <p className="plan-card__description"></p>
-      <p className="plan-card__cmsContent"></p>
+    this.formatPrice(5); // console.log() 'skaicius 5'
+    const { plan: p } = this.props;
+    return (
+      <div className="mobile-plan">
+        <h6 className="plan__header">{p.headerTitle}</h6>
+        <h2 className="plan__dataAllow">{p.dataAlowed} GB</h2>
+        <small className="plan__dataEU">Iš jų {p.dataEU} GB ES/EEE</small>
+        <p className="plan__min-sms">{p.minSms}</p>
+        <div className="plan__features">
+          <div className="hr"></div>
+          <ul className="features__list">
+            {p.features?.length > 0 &&
+              p.features.map((f) => (
+                <li key={f.title}>
+                  <img className="features__check" src={ListImage} alt="check" />
+                  <span>{f.title}</span>
+                </li>
+              ))}
+          </ul>
+          <div className="hr"></div>
+        </div>
+        <div className="plan__bottom">
+          <div className="bottom__price-part">
+            <h3 className="bottom__price">
+              {/* {p.price && p.price.commitment} <span>&euro;/men</span> */}
+              {/* p.price? - pasitikrina ar turi reiksme iki ? .commitment */}
+              {this.props.beIsipareigojimu
+                ? this.formatPrice(p.price?.commitment)
+                : this.formatPrice(p.price?.noCommitment)}
+              <span>&euro;/{p.period}</span>
+            </h3>
+            <small className="bottom__term">{p.contractLength?.commitment}</small>
+          </div>
+          <button className="plan__cta">{p.ctaButton}</button>
+        </div>
       </div>
-      
-      <div className="card-middle">
-      <i>icon</i><a href="#"> Textas</a>
-      <i>icon</i><a href="#"> Textas</a>
-      <i>icon</i><a href="#"> Textas</a>
-      </div>
-
-    <div className="card-bottom">
-      <div className="plan-card">
-        <div className="price">12.00/men</div>
-        <div className="period">24 men. sutartis</div>
-      </div>
-      <button href="#">Domina</button>
-    </div>
-
-    </div>;
+    );
   }
 }
 
-export default MobilePlans;
+export default MobilePlan;

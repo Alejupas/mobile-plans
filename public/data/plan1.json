@@ -1,0 +1,24 @@
+{
+    "headerTitle": "Mobilus START1",
+    "dataAlowed": 1,
+    "dataEU": 1,
+    "minSms": "Neribotos MIN ir SMS",
+    "features": [
+        {
+            "title": "M parasas (6 men)"
+        },
+        {
+            "title": "Irangos draudimas (3 men)"
+        }
+    ],
+    "price": {
+        "commitment": 9,
+        "noCommitment": 9.9
+    },
+    "period": "men",
+    "contractLength": {
+        "noCommitment": "Be įsipareigojimų",
+        "commitment": "24 mėn. sutartis"
+    },
+    "ctaButton": "Domina"
+}

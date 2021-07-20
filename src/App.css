@@ -1,6 +1,127 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* reset */
 * {
   box-sizing: border-box;
+}
+/* Common */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.d-flex {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* components */
+.App {
   font-family: 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+  color: #222;
+}
+
+.controls {
+  margin-bottom: 0.6rem;
+}
+
+/* mobile plan */
+.mobile-plan {
+  background-color: #fff;
+  /* temporary */
+  max-width: 280px;
+  padding: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.plan__header {
+  font-weight: normal;
+  margin-top: 0;
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.plan__dataAllow {
+  margin-bottom: 0;
+}
+
+.plan__dataEU {
+  font-size: 0.7rem;
+}
+
+.plan__min-sms {
+  font-size: 1rem;
+}
+.plan__features .hr {
+  height: 1px;
+  background-color: #f2f2f2;
+  /* background-color: black; */
+  margin: 0.5rem -1rem;
+}
+
+.features__list {
+  list-style: none;
+  padding-left: 0;
+}
+.features__list li {
+  line-height: 1.5rem;
+}
+
+.features__check {
+  width: 1rem;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+}
+
+.plan__bottom {
+  display: flex;
+  align-items: center;
+}
+
+.bottom__price-part {
+  width: 50%;
+}
+.bottom__price {
+  margin-bottom: 0;
+}
+.bottom__price span {
+  font-weight: normal;
+  font-size: 0.6rem;
+}
+
+.bottom__term {
+  font-size: 0.8rem;
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.plan__cta {
+  width: 50%;
+  background-color: #990ae3;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/*  comitment component */
+.commitment-component {
+  display: flex;
+  width: 50%;
+  gap: 2px;
+}
+.c__selection {
+  background-color: rgba(34, 34, 34, 0.04);
+  flex-basis: 50%;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.radio-container svg {
+  margin-right: 0.4rem;
 }
